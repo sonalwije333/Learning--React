@@ -1,0 +1,6 @@
+{
+  "students": [
+    { "id": 1, "name": "Alice", "place": "colombo","phone":"0761781419" }
+ 
+  ]
+}
