@@ -146,6 +146,9 @@ form input[type="text"]:focus {
   margin-bottom: 24px;
 }
 
+.errorMsg {
+  color: red;
+}
 
 
 

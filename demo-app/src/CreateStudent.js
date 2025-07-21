@@ -6,10 +6,18 @@ export default function CreateStudent() {
   const [name, setName] = useState("");
   const [place, setPlace] = useState("");
   const [phone, setPhone] = useState("");
-  const navigate = useNavigate(); // To redirect after saving
+  const [submitted, setSubmitted] = useState(false); // Tracks if form has been submitted
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitted(true); // Enable validation messages
+
+    // Check if all fields are filled
+    if (!id || !name || !place || !phone) {
+      return;
+    }
+
     const studentData = { id, name, place, phone };
 
     fetch("http://localhost:8000/students", {
@@ -22,7 +30,7 @@ export default function CreateStudent() {
       .then((res) => {
         if (res.ok) {
           alert("Student added successfully!");
-          navigate("/"); // Redirect to home
+          navigate("/");
         } else {
           throw new Error("Failed to add student");
         }
@@ -41,6 +49,9 @@ export default function CreateStudent() {
           value={id}
           onChange={(e) => setId(e.target.value)}
         />
+        {submitted && id.length === 0 && (
+          <span className="errorMsg">Please enter your ID</span>
+        )}
 
         <label htmlFor="name">Name:</label>
         <input
@@ -49,6 +60,9 @@ export default function CreateStudent() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        {submitted && name.length === 0 && (
+          <span className="errorMsg">Please enter your name</span>
+        )}
 
         <label htmlFor="place">Place:</label>
         <input
@@ -57,6 +71,9 @@ export default function CreateStudent() {
           value={place}
           onChange={(e) => setPlace(e.target.value)}
         />
+        {submitted && place.length === 0 && (
+          <span className="errorMsg">Please enter your place</span>
+        )}
 
         <label htmlFor="phone">Phone:</label>
         <input
@@ -65,6 +82,9 @@ export default function CreateStudent() {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+        {submitted && phone.length === 0 && (
+          <span className="errorMsg">Please enter your phone number</span>
+        )}
 
         <div>
           <button type="submit" className="btn btn-add">
