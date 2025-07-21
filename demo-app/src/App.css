@@ -1,0 +1,153 @@
+/* === Page Background === */
+body {
+  margin: 0;
+  padding: 0;
+ background: linear-gradient(to right, #e0f2ff, #f3e8ff);
+ /* Sky blue to yellow */
+}
+
+
+/* === Main Container === */
+.container {
+  padding: 44px;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* === Centered Page Heading === */
+.container h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+/* === Table Wrapper === */
+.table-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* === Table Styling === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Table Headers */
+thead {
+  background-color: #34495e;
+  color: white;
+}
+
+thead th {
+  text-align: left;
+  padding: 14px;
+}
+
+/* Table Rows */
+tbody td {
+  padding: 14px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 4px 2px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add {
+  background: linear-gradient(to right,#34495e);
+  margin-bottom: 16px;
+}
+
+.btn-info {
+  background: linear-gradient(to right, #6c5ce7, #a29bfe);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #0984e3, #74b9ff);
+}
+
+.btn-danger {
+  background: linear-gradient(to right, #d63031, #ff7675);
+}
+
+
+/* === CreateStudent Form Container === */
+
+.form-box {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  width: 90%;             
+  max-width: 600px;         
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* === Form Layout === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* === Form Labels === */
+form label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+/* === Form Inputs === */
+form input[type="text"] {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 4px rgba(108, 92, 231, 0.4);
+}
+
+.form-box h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+
+
+
+
+
