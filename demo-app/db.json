@@ -1,6 +1,34 @@
 {
   "students": [
-    { "id": 1, "name": "Alice", "place": "colombo","phone":"0761781419" }
- 
+    {
+      "id": "1",
+      "name": "Alice",
+      "place": "colombo",
+      "phone": "0761781419"
+    },
+    {
+      "id": "3",
+      "name": "pansilu",
+      "place": "asdad",
+      "phone": "0761781418"
+    },
+    {
+      "id": "",
+      "name": "",
+      "place": "",
+      "phone": ""
+    },
+    {
+      "id": "",
+      "name": "",
+      "place": "",
+      "phone": ""
+    },
+    {
+      "id": "",
+      "name": "",
+      "place": "",
+      "phone": ""
+    }
   ]
 }
