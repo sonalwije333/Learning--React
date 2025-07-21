@@ -7,13 +7,13 @@ export default function StudentTable() {
 
   // Fetch data from backend when component mounts
   useEffect(() => {
-    fetch('http://localhost:8000/students') // API endpoint
-      .then((res) => res.json())            // Parse JSON
+    fetch('http://localhost:8000/students')                // API endpoint
+      .then((res) => res.json())                          // Parse JSON
       .then((data) => {
-        setStudents(data);                 //  Store data in state
+        setStudents(data);                               //  Store data in state
       })
-      .catch((err) => console.log(err.message)); // Handle fetch error
-  }, []); // Empty dependency array = run once on mount
+      .catch((err) => console.log(err.message));        // Handle fetch error
+  }, []);                                              // Empty dependency array = run once on mount
 
   return (
     <div className="container">
