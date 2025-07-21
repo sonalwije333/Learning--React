@@ -1,26 +1,24 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function StudentTable() {
-  //  Initialize students as an empty array
   const [students, setStudents] = useState([]);
+  const navigate = useNavigate();
 
-  // Fetch data from backend when component mounts
+  const DisplayDetails = (id) => {
+    navigate("/student/view/" + id);
+  };
   useEffect(() => {
-    fetch('http://localhost:8000/students')                // API endpoint
-      .then((res) => res.json())                          // Parse JSON
-      .then((data) => {
-        setStudents(data);                               //  Store data in state
-      })
-      .catch((err) => console.log(err.message));        // Handle fetch error
-  }, []);                                              // Empty dependency array = run once on mount
-
+    fetch("http://localhost:8000/students")
+      .then((res) => res.json())
+      .then((data) => setStudents(data))
+      .catch((err) => console.log(err.message));
+  }, []);
   return (
     <div className="container">
       <h2>Student Records</h2>
 
       <div className="table-container">
-        {/* ✅ Navigation link to add a new student */}
         <Link to="/student/create" className="btn btn-add">
           Add new Student
         </Link>
@@ -37,7 +35,6 @@ export default function StudentTable() {
           </thead>
 
           <tbody>
-            {/*  Map over students if data is available */}
             {students && students.length > 0 ? (
               students.map((item) => (
                 <tr key={item.id}>
@@ -46,9 +43,14 @@ export default function StudentTable() {
                   <td>{item.place}</td>
                   <td>{item.phone}</td>
                   <td>
-                    <a href="#" className="btn btn-info">View</a>
-                    <a href="#" className="btn btn-primary">Edit</a>
-                    <a href="#" className="btn btn-danger">Delete</a>
+                    <button
+                      onClick={() => DisplayDetails(item.id)}
+                      className="btn btn-info"
+                    >
+                      View
+                    </button>
+                    <button className="btn btn-primary">Edit</button>
+                    <button className="btn btn-danger">Delete</button>
                   </td>
                 </tr>
               ))
