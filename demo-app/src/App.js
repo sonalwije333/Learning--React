@@ -20,6 +20,8 @@ function App() {
         <Route path="/student/edit/:studentid" element={<EditStudent></EditStudent>}> </Route>
         <Route path="/student/view/:studentid" element={<ViewDetails></ViewDetails>}> </Route>
         <Route path="/student/create" element={<CreateStudent></CreateStudent>}> </Route>
+        <Route path="/student/edit/:studentid" element={<EditStudent></EditStudent>} />
+
       </Routes>
     </BrowserRouter>
   );
